@@ -4,8 +4,9 @@ import Button from './styled/Button.jsx'
 var Categories = (props) => {
   var elements = [];
 
-  var { categories, clickHandler, current} = props;
-
+  var { categories, clickHandler, current } = props;
+  categories = categories || [];
+  
   for (var i=0; i < categories.length; i++) {
     //using var here actually causes a bug
     let cat = categories[i];
