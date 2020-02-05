@@ -6,6 +6,7 @@ import Collapse from './styled/Collapse.jsx';
 
 var Page = (props) => {
   var { data, expand, clickHandler } = props;
+  data = data || {};
   var elements = [];
 
   var full = false;

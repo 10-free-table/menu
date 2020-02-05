@@ -4,6 +4,7 @@ import Column from './styled/Column.jsx';
 
 var Section = (props) => {
   var { data } = props;
+  data = data || {Dishes: {}};
   var elementsLeft = [];
   var elementsRight = [];
 
