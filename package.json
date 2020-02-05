@@ -7,7 +7,7 @@
     "test": "./node_modules/.bin/jest",
     "start": "nodemon server/index.js",
     "react-dev": "webpack -d --watch",
-    "seed-db": "mysql -u root -p && use menu && source ./schema.sql"
+    "seed-db": "mysql -u root -p < ./schema.sql"
   },
   "author": "Joseph Sandmeyer",
   "license": "ISC",
