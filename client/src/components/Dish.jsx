@@ -3,6 +3,7 @@ import Price from './styled/Price.jsx';
 
 var Dish = (props) => {
   var { name, data } = props;
+  data = data || {Price: 0, Ingredients: ""};
 
   return (
     <div>
