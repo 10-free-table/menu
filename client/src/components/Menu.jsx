@@ -18,7 +18,8 @@ class Menu extends React.Component {
   }
 
   componentDidMount() {
-    var pagenum = window.location.href[window.location.href.length - 1];
+    var urlsplit = window.location.href.split('/');
+    var pagenum = urlsplit[urlsplit.length - 1];
 
     $.get( "/api/menu/" + pagenum, function( dat ) {
       this.setState({
