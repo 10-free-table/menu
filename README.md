@@ -1,6 +1,6 @@
 # Project Name
 
-> Project description
+> Manu component for clone of OpenTable. Uses React, Webpack, Amazon EC2
 
 ## Related Projects
 
@@ -16,7 +16,9 @@
 
 ## Usage
 
-> Some usage instructions
+> In root directory, seed the your mysql database with command npm run seed-db
+> npm start
+> npm run react-dev
 
 ## Requirements
 
