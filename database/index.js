@@ -27,10 +27,10 @@ const getMenuWithPageId = function(page_id, cb) {
         sectionsString += ', ';
       }
 
-      sectionsString += parseInt(section) + 1;
+      sectionsString += parseInt(sections[section].SectionID);
 
       results.Categories[category][sectionName] = {
-        'ID': parseInt(section) + 1,
+        'ID': parseInt(sections[section].SectionID),
         'Dishes': {}
       };
     }
