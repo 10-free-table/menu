@@ -21,7 +21,7 @@ class Menu extends React.Component {
     var urlsplit = window.location.href.split('/');
     var pagenum = urlsplit[urlsplit.length - 1];
 
-    $.get( "/api/menu/" + pagenum, function( dat ) {
+    $.get( "http://localhost:3002/api/menu/" + pagenum, function( dat ) {
       this.setState({
         data: dat,
         currentPage: Object.keys(dat.Categories)[0]
