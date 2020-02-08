@@ -20,6 +20,7 @@ app.use(publicPath);
 
 
 app.get('/api/menu/:pageId', (req, res) => {
+  console.log('pageid: ' + req.params.pageId);
   db.getMenuWithPageId(req.params.pageId, (data) => {
     res.send(data);
   });
@@ -28,10 +29,9 @@ app.get('/api/menu/:pageId', (req, res) => {
 app.get('/', function (_, res) { res.sendFile(indexPath) });
 app.get('*', function (_, res) { res.sendFile(indexPath) });
 
-/*
 app.get('/:pageId', (req, res) => {
   res.sendFile(path.resolve(__dirname + '/../client/dist/index.html'));
-});*/
+});
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);

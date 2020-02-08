@@ -11,7 +11,7 @@ const getMenuWithPageId = function(page_id, cb) {
   };
 
   //build api from schema
-  connection.query('SELECT * from SECTIONS where PageID=' + page_id, function (error, sections, fields) {
+  connection.query('SELECT * from sections where PageID=' + page_id, function (error, sections, fields) {
     if (error) console.error(error);
 
     var sectionsString = '';
@@ -35,7 +35,7 @@ const getMenuWithPageId = function(page_id, cb) {
       };
     }
 
-    connection.query('SELECT * from FOOD where SectionID in (' + sectionsString + ')', function (error, dishes, fields) {
+    connection.query('SELECT * from food where SectionID in (' + sectionsString + ')', function (error, dishes, fields) {
       if (error) console.error(error);
 
       for (dish in dishes) {
@@ -51,7 +51,7 @@ const getMenuWithPageId = function(page_id, cb) {
         }
       }
 
-      connection.query('SELECT * from SPECIALS where PageID=' + page_id, function (error, specials, fields) {
+      connection.query('SELECT * from specials where PageID=' + page_id, function (error, specials, fields) {
         if (error) console.error(error);
 
         results.Specials.Blurb = specials[0]['Blurb'];

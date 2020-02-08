@@ -22,7 +22,10 @@ class Menu extends React.Component {
     var pagenum = urlsplit[urlsplit.length - 1];
     if (pagenum === '') pagenum = urlsplit[urlsplit.length - 2];
 
-    $.get( "http://localhost:3002/api/menu/" + pagenum, function( dat ) {
+    console.log('query db @ 18.223.170.195:3002/api/menu/' + pagenum);
+
+    $.get( "http://18.223.170.195:3002/api/menu/" + pagenum, function( dat ) {
+      console.log("change state");
       this.setState({
         data: dat,
         currentPage: Object.keys(dat.Categories)[0]
