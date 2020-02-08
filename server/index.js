@@ -11,7 +11,13 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(express.static(__dirname + '/../client/dist'));
+const publicPath = express.static(path.join(__dirname, '/../client/dist'), { redirect : false });
+
+const indexPath  = path.join(__dirname, '/../client/dist/index.html');
+
+app.use(publicPath);
+
+
 
 app.get('/api/menu/:pageId', (req, res) => {
   db.getMenuWithPageId(req.params.pageId, (data) => {
@@ -19,9 +25,13 @@ app.get('/api/menu/:pageId', (req, res) => {
   });
 });
 
+app.get('/', function (_, res) { res.sendFile(indexPath) });
+app.get('*', function (_, res) { res.sendFile(indexPath) });
+
+/*
 app.get('/:pageId', (req, res) => {
   res.sendFile(path.resolve(__dirname + '/../client/dist/index.html'));
-});
+});*/
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);

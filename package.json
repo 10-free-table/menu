@@ -6,6 +6,7 @@
   "scripts": {
     "test": "./node_modules/.bin/jest",
     "start": "nodemon server/index.js",
+    "build": "webpack --progress --color --config  webpack.config.js --watch",
     "react-dev": "webpack -d --watch",
     "seed-db": "mysql -u root -p < ./schema.sql"
   },
