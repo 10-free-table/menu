@@ -55,7 +55,7 @@
     "jest": "^25.1.0",
     "jest-enzyme": "^7.1.2",
     "jest-styled-components": "^6.0.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mysql": "^2.14.1",
     "nodemon": "^2.0.2",
     "react": "^16.12.0",
